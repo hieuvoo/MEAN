@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>The Dojo Message Board</title>
+        <link rel="stylesheet" href="/index.css">
+    </head>
+    <body>
+        <div id = "wrapper">
+            <h1>The Dojo Message Board</h1>
+            <div id="content">
+                <form action="/post %>" method="post">
+                  <div class="forminput">
+                    Name: <input type="text" name="name">
+                  </div>
+                  <div class="forminput">
+                    Message: <textarea name="text" rows="8" cols="80"></textarea>
+                  </div>
+                  <div class="formsubmit">
+                    <input type="submit" value="Post message">
+                  </div>
+                </form>
+                <% if(posts) { %>
+                    <% for(post of posts) { %>
+                        <div class="cat">
+                            <ul>
+                                <li><h2>Name: <%= post.name %></h2></li>
+                                <li><h2>Post: <%= post.text %><h2></li>
+                                <% for(comment of post._comments) { %>
+                                    <div class="comment">
+                                        <p>Name: <%= comment.name %></p>
+                                        <p>Comment: <%= comment.text %></p>
+                                    </div>
+                                <% } %>
+                            </ul>
+                            <form action="/posts/<%=post.id%>" method="post">
+                                <div class="forminput">
+                                  Name: <input type="text" name="name" placeholder="name">
+                                </div>
+                                <div class="forminput">
+                                  Comment: <textarea name="text" rows="2" placeholder="comment"></textarea>
+                                </div>
+                                <div class="formsubmit">
+                                  <input type="submit" value="Post comment">
+                                </div>
+                            </form>
+                        </div>
+                    <% } %>
+                <% } %>
+            </div>
+        </div>
+    </body>
+</html>
