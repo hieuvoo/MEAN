@@ -1,0 +1,13 @@
+#container {
+    text-align: center;
+    font: 100 20pt "Helvetica Neue", sans-serif;
+    padding: 10px;
+    background-color: orangered;
+}
+form {
+    margin-bottom: 10px;
+}
+img {
+ width: 350px;
+ height: 250px;
+}

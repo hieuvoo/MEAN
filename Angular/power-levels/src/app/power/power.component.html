@@ -1,0 +1,20 @@
+<div id="container">
+  <form (submit)="getPower()">
+      Scouter <select name="initial" [(ngModel)]="initial">
+          <option *ngFor="let i of range">{{i}}</option>
+      </select>
+      <input type="submit" value="Submit">
+      
+      <div>
+      <img src="https://nextshark-vxdsockgvw3ki.stackpathdns.com/wp-content/uploads/2017/08/Goku.jpg" alt="Goku">
+      </div>     
+      
+
+  </form>
+  <app-level type="Saiyan" multiplier="1" [initial] = "powerLevel"></app-level>
+  <app-level type="Super Saiyan" multiplier="10" [initial] = "powerLevel"></app-level>
+  <app-level type="Super Saiyan 2" multiplier="90" [initial] = "powerLevel"></app-level>
+  <app-level type="Super Saiyan 3" multiplier="150" [initial] = "powerLevel"></app-level>
+  <app-level type="Super Saiyan God" multiplier="250" [initial] = "powerLevel"></app-level>
+  <app-level type="Super Saiyan Blue" multiplier="500" [initial] = "powerLevel"></app-level>
+</div>
